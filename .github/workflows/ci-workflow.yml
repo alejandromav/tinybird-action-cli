@@ -16,4 +16,4 @@ jobs:
         id: tinybird-cli
         with:
           token: ${{ secrets.TINYBIRD_TOKEN }}
-          args: "--debug push"
+          args: "--debug push --push-deps"

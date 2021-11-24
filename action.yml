@@ -1,4 +1,4 @@
-name: Tinybird
+name: Tinybird CLI
 description: Run Tinybird CLI
 author: Alejandro Martin <hi@alejandromav.com>
 
@@ -49,3 +49,8 @@ runs:
     - ${{ inputs.args }}
   env:
     TOKEN: ${{ inputs.token }}
+
+# For Github Marketplace listing
+branding:
+  icon: 'play'  
+  color: 'white'

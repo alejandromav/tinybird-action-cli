@@ -2,9 +2,9 @@
 This action allows you to run [Tinybird CLI](https://docs.tinybird.co/cli.html) on your project.
 
 ## Usage
-To use the action simply create an `*.yml`file in the `.github/workflows/` directory.
+To use the action simply create an `*.yml` file in the `.github/workflows/` directory. Ref. https://docs.github.com/es/actions/learn-github-actions/workflow-syntax-for-github-actions
 
-For example:
+For example, this will push your latest changes to Tinybird:
 
 ```yaml
 name: Push to Tinybird  # feel free to pick your own name
@@ -26,7 +26,7 @@ jobs:
     # Important: This sets up your GITHUB_WORKSPACE environment variable
     - uses: actions/checkout@v2
 
-    - name: Lint Ansible Playbook
+    - name: Push changes to Tinybird
       # replace "master" with any valid ref
       uses: alejandromav/tinybird-action@master
       with:
