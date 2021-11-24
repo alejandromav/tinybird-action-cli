@@ -1,0 +1,19 @@
+name: CI
+
+on: [ push ]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Test CLI works
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test Tinybird CLI, should prompt help
+        uses: ./ # Uses an action in the root directory
+        id: tinybird-cli
+        with:
+          token: ${{ secrets.TINYBIRD_TOKEN }}
+          args: "--debug push"

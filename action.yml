@@ -1,0 +1,51 @@
+name: Tinybird
+description: Run Tinybird CLI
+author: Alejandro Martin <hi@alejandromav.com>
+
+inputs:
+  args:
+    description: |
+      Usage: tb [OPTIONS] COMMAND [ARGS]...
+
+      Options:
+        --debug / --no-debug            Print internal representation
+        --token TEXT                    Use auth token, defaults to TB_TOKEN envvar,
+                                        then to the .tinyb file
+        --host TEXT                     Use custom host, defaults to TB_HOST envvar,
+                                        then to https://api.tinybird.co
+        --version-warning / --no-version-warning
+                                        Don't print version warning message if
+                                        there's a new available version. You can use
+                                        TB_VERSION_WARNING envar
+        --version                       Show the version and exit.
+        --help                          Show this message and exit.
+
+      Commands:
+        auth          Configure auth
+        check         Check file syntax
+        connection    Connection commands
+        datasource    Data sources commands
+        dependencies  Print all data sources dependencies
+        drop-prefix   Drop all the resources inside a project with prefix. This
+                      command is dangerous because it removes everything, use with
+                      care
+        init          Initialize folder layout
+        job           Jobs commands
+        pipe          Pipes commands
+        pull          Retrieve latest versions for project files from Tinybird
+        push          Push files to Tinybird
+        sql           Run SQL query over data sources and pipes
+        workspace     Workspace commands
+    required: false
+
+    token:
+      description: Tinybird admin token
+      required: true
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.args }}
+  env:
+    TOKEN: ${{ inputs.token }}
