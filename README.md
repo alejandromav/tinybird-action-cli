@@ -1,4 +1,4 @@
-# Tinybird GitHub Action
+# Tinybird GitHub Action CLI
 This action allows you to run [Tinybird CLI](https://docs.tinybird.co/cli.html) on your project.
 
 ## Usage
@@ -28,7 +28,7 @@ jobs:
 
     - name: Push changes to Tinybird
       # replace "master" with any valid ref
-      uses: alejandromav/tinybird-action@master
+      uses: alejandromav/tinybird-action-cli@master
       with:
         # [required]
         # Tinybird admin token. Please, use Github secrets (https://docs.github.com/en/actions/security-guides/encrypted-secrets)
