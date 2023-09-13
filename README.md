@@ -1,3 +1,6 @@
+> [!WARNING]
+> This project is deprecated and no longer maintained, please use [@tinybird/ci](https://github.com/tinybirdco/ci) instead
+
 # Tinybird GitHub Action CLI
 This action allows you to run [Tinybird CLI](https://docs.tinybird.co/cli.html) on your project.
 
